@@ -1,23 +1,21 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'nvd3/rails/version'
+require File.expand_path('../lib/nvd3/rails/version', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.name          = "nvd3-rails"
-  spec.version       = Nvd3::Rails::VERSION
-  spec.authors       = ["Dale Stevens"]
-  spec.email         = ["voltechs@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+	spec.name          = "nvd3-rails"
+	spec.version       = NVD3::Rails::VERSION
+	spec.authors       = ["Dale Stevens"]
+	spec.email         = ["dale@twilightcoders.com"]
+	spec.description   = "Bundles NVD3 with Rails (4)"
+	spec.summary       = "This gem provides NVD3 for your Rails (4) application."
+	spec.homepage      = "https://github.com/twilightcoders/nvd3-rails"
+	spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+	spec.add_dependency "d3-rails", ">= 3.3.7"
+	spec.add_dependency "railties", ">= 3.1"
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+	spec.add_development_dependency "rails", ">= 3.1"
+
+	spec.files         = `git ls-files`.split("\n")
+	spec.require_paths = ["lib"]
 end
